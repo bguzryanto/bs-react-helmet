@@ -3,6 +3,7 @@
   // BuckleScript comes with its own parser for bsconfig.json, which is normal JSON, with the extra support of comments and trailing commas.
   "name": "bs-react-helmet",
   "version": "0.2.0",
+  "refmt": 3,
   "sources": ["src"],
   "bs-dependencies": [
     // add your dependencies here. You'd usually install them normally through `npm install my-dependency`. If my-dependency has a bsconfig.json too, then everything will work seamlessly.

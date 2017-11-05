@@ -1,6 +1,6 @@
 {
   "name": "bs-react-helmet",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "scripts": {
     "build": "bsb -make-world",
     "start": "bsb -make-world -w",
@@ -10,7 +10,7 @@
   "keywords": ["BuckleScript"],
   "license": "MIT",
   "devDependencies": {
-    "bs-platform": "1.9.3"
+    "bs-platform": "^2.0.0"
   },
   "dependencies": {
     "react": "^16.0.0",
