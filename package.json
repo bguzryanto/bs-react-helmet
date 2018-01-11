@@ -1,13 +1,15 @@
 {
   "name": "bs-react-helmet",
   "version": "0.2.1",
+  "description": "Reason bindings to react-helmet",
+  "repository": "https://github.com/bguzryanto/bs-react-helmet",
   "scripts": {
     "build": "bsb -make-world",
     "start": "bsb -make-world -w",
     "clean": "bsb -clean-world"
   },
   "files": ["src/*.re", "bsconfig.json"],
-  "keywords": ["BuckleScript"],
+  "keywords": ["BuckleScript", "react-helmet", "react"],
   "license": "MIT",
   "devDependencies": {
     "bs-platform": "^2.0.0"
