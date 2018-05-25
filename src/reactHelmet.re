@@ -18,23 +18,24 @@ type t = {
   "bodyAttributes": Js.undefined(bodyAttributes),
   "defaultTitle": Js.undefined(string),
   "defer": Js.undefined(string),
-  "encodeSpecialCharacters": Js.boolean,
+  "encodeSpecialCharacters": bool,
   "htmlAttributes": Js.undefined(htmlAttributes),
   "link": Js.undefined(link),
   "meta": Js.undefined(meta),
   "noscript": Js.undefined(string),
   "onChangeClientState": Js.undefined(unit),
   "style": Js.undefined(style),
-  "title": Js.undefined(string)
+  "title": Js.undefined(string),
 };
 
-let boolFromOpt = (x) =>
-  switch x {
-  | None => Js.false_
+let boolFromOpt = x =>
+  switch (x) {
+  | None => false
   | Some(x) => Js.Boolean.to_js_boolean(x)
   };
 
-[@bs.module "react-helmet"] external helmetClass : ReasonReact.reactClass = "Helmet";
+[@bs.module "react-helmet"]
+external helmetClass : ReasonReact.reactClass = "Helmet";
 
 let make =
     (
@@ -50,23 +51,24 @@ let make =
       ~onChangeClientState=?,
       ~style=?,
       ~title=?,
-      children
+      children,
     ) =>
   ReasonReact.wrapJsForReason(
     ~reactClass=helmetClass,
     ~props={
-             "base": base |> Js.Undefined.from_opt,
-             "bodyAttributes": bodyAttributes |> Js.Undefined.from_opt,
-             "defaultTitle": defaultTitle |> Js.Undefined.from_opt,
-             "defer": defer |> Js.Undefined.from_opt,
+             "base": base |> Js.Undefined.fromOption,
+             "bodyAttributes": bodyAttributes |> Js.Undefined.fromOption,
+             "defaultTitle": defaultTitle |> Js.Undefined.fromOption,
+             "defer": defer |> Js.Undefined.fromOption,
              "encodeSpecialCharacters": encodeSpecialCharacters |> boolFromOpt,
-             "htmlAttributes": htmlAttributes |> Js.Undefined.from_opt,
-             "link": link |> Js.Undefined.from_opt,
-             "meta": meta |> Js.Undefined.from_opt,
-             "noscript": noscript |> Js.Undefined.from_opt,
-             "onChangeClientState": onChangeClientState |> Js.Undefined.from_opt,
-             "style": style |> Js.Undefined.from_opt,
-             "title": title |> Js.Undefined.from_opt
+             "htmlAttributes": htmlAttributes |> Js.Undefined.fromOption,
+             "link": link |> Js.Undefined.fromOption,
+             "meta": meta |> Js.Undefined.fromOption,
+             "noscript": noscript |> Js.Undefined.fromOption,
+             "onChangeClientState":
+               onChangeClientState |> Js.Undefined.fromOption,
+             "style": style |> Js.Undefined.fromOption,
+             "title": title |> Js.Undefined.fromOption,
            }: t,
-    children
+    children,
   );
