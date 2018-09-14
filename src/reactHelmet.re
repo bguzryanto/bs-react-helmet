@@ -31,7 +31,7 @@ type t = {
 let boolFromOpt = x =>
   switch (x) {
   | None => false
-  | Some(x) => Js.Boolean.to_js_boolean(x)
+  | Some(x) => x
   };
 
 [@bs.module "react-helmet"]
