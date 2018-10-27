@@ -1,23 +1,36 @@
 {
-  "name": "bs-react-helmet",
-  "version": "0.2.1",
+  "name": "@moox/bs-react-helmet",
+  "version": "1.0.0",
   "description": "Reason bindings to react-helmet",
-  "repository": "https://github.com/bguzryanto/bs-react-helmet",
-  "scripts": {
-    "build": "bsb -make-world",
-    "start": "bsb -make-world -w",
-    "clean": "bsb -clean-world"
-  },
-  "files": ["src/*.re", "bsconfig.json"],
-  "keywords": ["BuckleScript", "react-helmet", "react"],
   "license": "MIT",
-  "devDependencies": {
-    "bs-platform": "^4.0.0"
+  "publishConfig": {
+    "access": "public"
   },
-  "dependencies": {
+  "repository": "https://github.com/MoOx/bs-react-helmet",
+  "files": [
+    "src/*.re",
+    "bsconfig.json"
+  ],
+  "keywords": [
+    "BuckleScript",
+    "bs-react-helmet",
+    "react-helmet",
+    "react"
+  ],
+  "peerDependencies": {
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-helmet": "^5.2.0",
     "reason-react": "^0.5.0"
+  },
+  "devDependencies": {
+    "bs-platform": "^4.0.0",
+    "npmpub": "^4.1.0"
+  },
+  "scripts": {
+    "build": "bsb -make-world",
+    "start": "bsb -make-world -w",
+    "clean": "bsb -clean-world",
+    "release": "npmpub"
   }
 }

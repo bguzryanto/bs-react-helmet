@@ -1,25 +1,47 @@
-# bs-react-helmet
+# @moox/bs-react-helmet
 
-Reason bindings to react-helmet.
+Reason bindings to [react-helmet](https://github.com/nfl/react-helmet).
 
-# Installation
+_Not everything is supported yet._
 
-```shell
-yarn add react-helmet
-yarn add bs-react-helmet
+# Install
+
+```console
+yarn add react-helmet @moox/bs-react-helmet
 ```
 
-Add to bsconfig.js
+Note that you need `react`, `react-dom`, `reason-react` and `react-helmet`
+as peer dependencies.
+
+Adjust your `bsconfig.js` by adding this package:
+
 ```
-"bs-dependencies": [
-  "bs-react-helmet"
-]
+  "bs-dependencies": [
+    "reason-react",
+    "@moox/bs-react-helmet"
+  ]
 ```
 
-# Example
+# Usage
 
-TODO
+```reason
+let component = ReasonReact.statelessComponent("CommonThings");
 
-# Thanks
-
-Thanks [react-helmet](https://github.com/nfl/react-helmet), [reason-react](https://github.com/reasonml/reason-react), [bs-blueprintjs](https://github.com/shanewilson/bs-blueprintjs), [bs-glamor](bs-glamor) for the inspiration how to create bindings to Reason.
+let make = (_) => {
+  ...component,
+  render: _self =>
+    <BsReactHelmet>
+      <style>
+        (
+          {j|
+html {
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+}
+|j}
+          |> ReasonReact.string
+        )
+      </style>
+    </BsReactHelmet>
+};
+```
