@@ -1,6 +1,6 @@
 {
   "name": "@moox/bs-react-helmet",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Reason bindings to react-helmet",
   "license": "MIT",
   "publishConfig": {
