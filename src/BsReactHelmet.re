@@ -6,6 +6,8 @@ type htmlAttributes;
 
 type bodyAttributes;
 
+type titleAttributes;
+
 type link;
 
 type meta;
@@ -14,18 +16,22 @@ type base;
 
 type t = {
   .
-  "base": Js.undefined(string),
-  "bodyAttributes": Js.undefined(bodyAttributes),
-  "defaultTitle": Js.undefined(string),
   "defer": Js.undefined(string),
   "encodeSpecialCharacters": bool,
-  "htmlAttributes": Js.undefined(htmlAttributes),
-  "link": Js.undefined(link),
-  "meta": Js.undefined(meta),
-  "noscript": Js.undefined(string),
   "onChangeClientState": Js.undefined(unit),
-  "style": Js.undefined(style),
+  "htmlAttributes": Js.undefined(htmlAttributes),
+  "bodyAttributes": Js.undefined(bodyAttributes),
+  "titleAttributes": Js.undefined(titleAttributes),
+  "titleTemplate": Js.undefined(string),
+  "defaultTitle": Js.undefined(string),
+  /* some <head> tags can be passed as props */
   "title": Js.undefined(string),
+  "meta": Js.undefined(meta),
+  "base": Js.undefined(string),
+  "link": Js.undefined(link),
+  "style": Js.undefined(style),
+  "script": Js.undefined(string),
+  "noscript": Js.undefined(string),
 };
 
 let boolFromOpt = x =>
@@ -35,40 +41,48 @@ let boolFromOpt = x =>
   };
 
 [@bs.module "react-helmet"]
-external helmetClass : ReasonReact.reactClass = "Helmet";
+external helmetClass: ReasonReact.reactClass = "Helmet";
 
 let make =
     (
-      ~base=?,
-      ~bodyAttributes=?,
-      ~defaultTitle=?,
       ~defer=?,
       ~encodeSpecialCharacters=?,
-      ~htmlAttributes=?,
-      ~link=?,
-      ~meta=?,
-      ~noscript=?,
       ~onChangeClientState=?,
-      ~style=?,
+      ~htmlAttributes=?,
+      ~bodyAttributes=?,
+      ~titleAttributes=?,
+      ~defaultTitle=?,
+      ~titleTemplate=?,
       ~title=?,
+      ~meta=?,
+      ~base=?,
+      ~link=?,
+      ~style=?,
+      ~script=?,
+      ~noscript=?,
       children,
     ) =>
   ReasonReact.wrapJsForReason(
     ~reactClass=helmetClass,
     ~props={
-             "base": base |> Js.Undefined.fromOption,
-             "bodyAttributes": bodyAttributes |> Js.Undefined.fromOption,
-             "defaultTitle": defaultTitle |> Js.Undefined.fromOption,
              "defer": defer |> Js.Undefined.fromOption,
              "encodeSpecialCharacters": encodeSpecialCharacters |> boolFromOpt,
-             "htmlAttributes": htmlAttributes |> Js.Undefined.fromOption,
-             "link": link |> Js.Undefined.fromOption,
-             "meta": meta |> Js.Undefined.fromOption,
-             "noscript": noscript |> Js.Undefined.fromOption,
              "onChangeClientState":
                onChangeClientState |> Js.Undefined.fromOption,
-             "style": style |> Js.Undefined.fromOption,
+             "htmlAttributes": htmlAttributes |> Js.Undefined.fromOption,
+             "bodyAttributes": bodyAttributes |> Js.Undefined.fromOption,
+             "titleAttributes": titleAttributes |> Js.Undefined.fromOption,
+             "titleTemplate": titleTemplate |> Js.Undefined.fromOption,
+             "defaultTitle": defaultTitle |> Js.Undefined.fromOption,
+
              "title": title |> Js.Undefined.fromOption,
+             "meta": meta |> Js.Undefined.fromOption,
+             "base": base |> Js.Undefined.fromOption,
+
+             "link": link |> Js.Undefined.fromOption,
+             "style": style |> Js.Undefined.fromOption,
+             "script": script |> Js.Undefined.fromOption,
+             "noscript": noscript |> Js.Undefined.fromOption,
            }: t,
     children,
   );

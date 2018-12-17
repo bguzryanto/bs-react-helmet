@@ -1,8 +1,6 @@
 # @moox/bs-react-helmet
 
-Reason bindings to [react-helmet](https://github.com/nfl/react-helmet).
-
-_Not everything is supported yet._
+> Reason bindings to [react-helmet](https://github.com/nfl/react-helmet).
 
 # Install
 
@@ -30,7 +28,7 @@ let component = ReasonReact.statelessComponent("CommonThings");
 let make = (_) => {
   ...component,
   render: _self =>
-    <BsReactHelmet>
+    <BsReactHelmet defaultTitle="This is a title">
       <style>
         (
           {j|
