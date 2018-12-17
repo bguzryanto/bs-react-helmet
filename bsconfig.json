@@ -1,7 +1,13 @@
 {
   "name": "@moox/bs-react-helmet",
   "refmt": 3,
-  "sources": ["src", "test"],
+  "sources": [
+    "src",
+    {
+      "dir": "test",
+      "type": "dev"
+    }
+  ],
   "bs-dependencies": ["reason-react"],
   "reason": {
     "react-jsx": 2

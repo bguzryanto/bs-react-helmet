@@ -1,3 +1,7 @@
+# 1.1.1 - 2018-10-27
+
+- Fix missing `test` directory by flagging it as `dev`
+
 # 1.1.0 - 2018-10-27
 
 - Add support for `titleAttributes` prop
