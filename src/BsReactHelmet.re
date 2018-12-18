@@ -1,7 +1,3 @@
-type script;
-
-type style;
-
 type htmlAttributes;
 
 type bodyAttributes;
@@ -13,6 +9,12 @@ type link;
 type meta;
 
 type base;
+
+type style;
+
+type script;
+
+type noscript;
 
 type t = {
   .
@@ -30,8 +32,8 @@ type t = {
   "base": Js.undefined(string),
   "link": Js.undefined(link),
   "style": Js.undefined(style),
-  "script": Js.undefined(string),
-  "noscript": Js.undefined(string),
+  "script": Js.undefined(script),
+  "noscript": Js.undefined(noscript),
 };
 
 let boolFromOpt = x =>
