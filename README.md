@@ -43,3 +43,9 @@ html {
     </BsReactHelmet>
 };
 ```
+
+---
+
+## [CHANGELOG](CHANGELOG.md)
+
+## [LICENSE](LICENSE)
