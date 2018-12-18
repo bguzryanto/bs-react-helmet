@@ -1,6 +1,6 @@
 # @moox/bs-react-helmet
 
-> Reason bindings to [react-helmet](https://github.com/nfl/react-helmet).
+> [Reason](https://reasonml.github.io) / [BuckleScript](https://bucklescript.github.io) bindings for [React Helmet](https://github.com/nfl/react-helmet), a document head manager for React.
 
 # Install
 
