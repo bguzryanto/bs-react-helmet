@@ -1,19 +1,14 @@
+[@bs.module "react-helmet"]
+external helmetClass: ReasonReact.reactClass = "Helmet";
+
 type htmlAttributes;
-
 type bodyAttributes;
-
 type titleAttributes;
-
 type meta;
-
 type base;
-
 type link;
-
 type style;
-
 type script;
-
 type noscript;
 
 [@bs.deriving abstract]
@@ -47,9 +42,6 @@ let objectWithoutUndefinedValues: 'a => 'a = [%bs.raw
     return newObj;
   }"
 ];
-
-[@bs.module "react-helmet"]
-external helmetClass: ReasonReact.reactClass = "Helmet";
 
 let make =
     (
