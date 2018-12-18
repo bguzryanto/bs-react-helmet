@@ -16,7 +16,7 @@ type base;
 
 type t = {
   .
-  "defer": Js.undefined(string),
+  "defer": bool,
   "encodeSpecialCharacters": bool,
   "onChangeClientState": Js.undefined(unit),
   "htmlAttributes": Js.undefined(htmlAttributes),
@@ -65,7 +65,7 @@ let make =
   ReasonReact.wrapJsForReason(
     ~reactClass=helmetClass,
     ~props={
-             "defer": defer |> Js.Undefined.fromOption,
+             "defer": defer |> boolFromOpt,
              "encodeSpecialCharacters": encodeSpecialCharacters |> boolFromOpt,
              "onChangeClientState":
                onChangeClientState |> Js.Undefined.fromOption,
