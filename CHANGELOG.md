@@ -1,3 +1,8 @@
+# 1.1.3 - 2018-12-19
+
+- Small internal refactoring to avoid `undefined` keys.
+  Instead of an ugly raw JavaScript trick, we now rely on `[@bs.optional]`.
+
 # 1.1.2 - 2018-12-18
 
 - Fix missing `defer` type
