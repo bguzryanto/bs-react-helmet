@@ -1,3 +1,8 @@
+# 2.0.0 - 2019-04-15
+
+- Updated for reason-react 0.7 & bs-platform 5.0
+- Add Helmet.renderStatic
+
 # 1.1.3 - 2018-12-19
 
 - Small internal refactoring to avoid `undefined` keys.
