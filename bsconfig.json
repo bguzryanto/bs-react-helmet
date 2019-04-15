@@ -1,16 +1,19 @@
 {
   "name": "@moox/bs-react-helmet",
   "refmt": 3,
+  "reason": {
+    "react-jsx": 3
+  },
+  "suffix": ".bs.js",
   "sources": [
-    "src",
+    {
+      "dir": "src",
+      "subdirs": true
+    },
     {
       "dir": "test",
       "type": "dev"
     }
   ],
-  "bs-dependencies": ["reason-react"],
-  "reason": {
-    "react-jsx": 2
-  },
-  "bsc-flags": ["-bs-super-errors"]
+  "bs-dependencies": ["reason-react"]
 }

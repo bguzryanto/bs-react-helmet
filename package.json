@@ -8,7 +8,6 @@
   },
   "homepage": "https://github.com/MoOx/bs-react-helmet",
   "repository": "https://github.com/MoOx/bs-react-helmet",
-  "bugs": "https://github.com/MoOx/bs-react-helmet",
   "files": [
     "src/*.re",
     "bsconfig.json"
@@ -31,18 +30,18 @@
     "reason-react"
   ],
   "peerDependencies": {
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0",
     "react-helmet": "^5.2.0",
-    "reason-react": "^0.5.0"
+    "reason-react": "^0.7.0"
   },
   "devDependencies": {
-    "bs-platform": "^4.0.0",
+    "bs-platform": "^5.0.1",
     "npmpub": "^4.1.0",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0",
     "react-helmet": "^5.2.0",
-    "reason-react": "^0.5.0"
+    "reason-react": "^0.7.0"
   },
   "scripts": {
     "build": "bsb -make-world",
