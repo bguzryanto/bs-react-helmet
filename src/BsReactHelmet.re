@@ -30,7 +30,7 @@ external make:
     ~children: React.element=?
   ) =>
   React.element =
-  "";
+  "Helmet";
 
 type helmetProp = {
   .
