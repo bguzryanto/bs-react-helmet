@@ -31,3 +31,23 @@ external make:
   ) =>
   React.element =
   "";
+
+type helmetProp = {
+  .
+  [@bs.meth] "toComponent": unit => React.element,
+  [@bs.meth] "toString": unit => string,
+};
+type helmet = {
+  .
+  "base": helmetProp,
+  "bodyAttributes": helmetProp,
+  "htmlAttributes": helmetProp,
+  "link": helmetProp,
+  "meta": helmetProp,
+  "noscript": helmetProp,
+  "script": helmetProp,
+  "style": helmetProp,
+  "title": helmetProp,
+};
+[@bs.val] [@bs.module "react-helmet"] [@bs.scope "Helmet"]
+external renderStatic: unit => helmet = "";

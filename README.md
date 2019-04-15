@@ -2,7 +2,7 @@
 
 > [Reason](https://reasonml.github.io) / [BuckleScript](https://bucklescript.github.io) bindings for [React Helmet](https://github.com/nfl/react-helmet), a document head manager for React.
 
-# Install
+## Install
 
 ```console
 yarn add react-helmet @moox/bs-react-helmet
@@ -20,7 +20,7 @@ Adjust your `bsconfig.js` by adding this package:
   ]
 ```
 
-# Usage
+## Usage
 
 ```reason
 let component = ReasonReact.statelessComponent("CommonThings");
@@ -43,6 +43,15 @@ html {
     </BsReactHelmet>
 };
 ```
+
+### Server-side static rendering
+
+```reason
+let helmet = BsReactHelmet.renderStatic();
+let title = helmet##title##toString();
+```
+
+Follow official documentation for all methods available.
 
 ---
 
