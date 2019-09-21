@@ -1,7 +1,16 @@
-type htmlAttributes;
+[@bs.deriving abstract]
+type htmlAttributes = {lang: string};
 type bodyAttributes;
 type titleAttributes;
-type meta;
+[@bs.deriving abstract]
+type meta = {
+  [@bs.optional]
+  name: string,
+  [@bs.optional]
+  property: string,
+  [@bs.optional]
+  content: string,
+};
 type base;
 type link;
 type style;
@@ -50,4 +59,4 @@ type helmet = {
   "title": helmetProp,
 };
 [@bs.val] [@bs.module "react-helmet"] [@bs.scope "Helmet"]
-external renderStatic: unit => helmet = "";
+external renderStatic: unit => helmet = "renderStatic";
