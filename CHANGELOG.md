@@ -1,5 +1,9 @@
 # Changelog of `@moox/bs-react-helmet`
 
+## 2.1.0 - 2019-04-15
+
+- Improved htmlAttributes and meta types [#1](https://github.com/MoOx/bs-react-helmet/pull/1) by @johnridesabike
+
 ## 2.0.0 - 2019-04-15
 
 - Updated for reason-react 0.7 & bs-platform 5.0
