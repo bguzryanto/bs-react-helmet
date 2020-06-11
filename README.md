@@ -1,25 +1,60 @@
-# bs-react-helmet
+# @moox/bs-react-helmet
 
-Reason bindings to react-helmet.
+> [Reason](https://reasonml.github.io) / [BuckleScript](https://bucklescript.github.io) bindings for [React Helmet](https://github.com/nfl/react-helmet), a document head manager for React.
 
-# Installation
+## Install
 
-```shell
-yarn add react-helmet
-yarn add bs-react-helmet
+```console
+yarn add react-helmet @moox/bs-react-helmet
 ```
 
-Add to bsconfig.js
+Note that you need `react`, `react-dom`, `reason-react` and `react-helmet`
+as peer dependencies.
+
+Adjust your `bsconfig.js` by adding this package:
+
 ```
-"bs-dependencies": [
-  "bs-react-helmet"
-]
+  "bs-dependencies": [
+    "reason-react",
+    "@moox/bs-react-helmet"
+  ]
 ```
 
-# Example
+## Usage
 
-TODO
+```reason
+let component = ReasonReact.statelessComponent("CommonThings");
 
-# Thanks
+let make = (_) => {
+  ...component,
+  render: _self =>
+    <BsReactHelmet defaultTitle="This is a title">
+      <style>
+        (
+          {j|
+html {
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+}
+|j}
+          |> ReasonReact.string
+        )
+      </style>
+    </BsReactHelmet>
+};
+```
 
-Thanks [react-helmet](https://github.com/nfl/react-helmet), [reason-react](https://github.com/reasonml/reason-react), [bs-blueprintjs](https://github.com/shanewilson/bs-blueprintjs), [bs-glamor](bs-glamor) for the inspiration how to create bindings to Reason.
+### Server-side static rendering
+
+```reason
+let helmet = BsReactHelmet.renderStatic();
+let title = helmet##title##toString();
+```
+
+Follow official documentation for all methods available.
+
+---
+
+## [CHANGELOG](CHANGELOG.md)
+
+## [LICENSE](LICENSE)
