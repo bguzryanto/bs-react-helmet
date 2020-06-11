@@ -1,5 +1,12 @@
 # Changelog of `@moox/bs-react-helmet`
 
+## 3.0.0 - 2020-06-11
+
+- Bump react-helmet peer dependency to v6
+- Bump reason-react to v0.8
+
+No binding changes.
+
 ## 2.1.0 - 2019-04-15
 
 - Improved htmlAttributes and meta types [#1](https://github.com/MoOx/bs-react-helmet/pull/1) by @johnridesabike
